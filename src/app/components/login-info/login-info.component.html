@@ -1,0 +1,12 @@
+<h1>Displaying Login Summary</h1>
+<font color="red"><h2>{{errorMessage}}</h2></font>
+<table border="10" [cellSpacing]="10" cellPadding="10">
+    <tr>
+        <th>Username</th>
+        <th>Password</th>
+    </tr>
+    <tr *ngFor="let login of logins">
+    <td>{{login.username}}</td>
+    <td>{{login.password}}</td>
+    </tr>
+</table>
