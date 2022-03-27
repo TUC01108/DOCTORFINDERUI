@@ -27,6 +27,11 @@ export class LoginService {
     );
   }
 
+  // save a single login
+  saveLogin(login:Login) : Observable<Login> {
+    return this.httpClient.post<Login> (loginURL,login,this.httpOptions);
+  }
+
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) 
   {
     let errorMessage = '';

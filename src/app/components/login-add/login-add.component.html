@@ -1,1 +1,147 @@
-<p>login-add works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign Up</title>
+<font color="green"><h2>{{successMessage}}</h2></font>
+
+<style>
+html, body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	padding-top: 0px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+}
+
+form {
+	padding-top: 80px;
+}
+
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-signin .checkbox {
+	font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+	z-index: 2;
+}
+
+.form-signin input[type="text"] {
+	margin-bottom: 5px;
+}
+
+.form-signin input[type="email"] {
+	margin-bottom: 5px;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 5px;
+}
+
+.form-signin input[type="radio"] {
+	margin-bottom: 5px;
+}
+
+.form-signin input[type="button"] {
+	margin-bottom: 5px;
+}
+
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+button {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+</style>
+
+</head>
+<body class="text-center bg-dark">
+	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<header class="mb-auto">
+			<div>
+				<h3 class="float-md-start mb-0 text-white">DoctorFinder</h3>
+				<nav class="nav nav-masthead justify-content-center float-md-end">
+					<a class="nav-link active text-white-50" aria-current="page"
+						href="index.jsp">Home</a> <a class="nav-link text-white-50"
+						href="#">Help</a> <a class="nav-link text-white-50" href="#">Contact</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="form-signin">
+			<form novalidate [formGroup]="loginForm" (ngSubmit)="displayLoginInfo()">
+            <fieldset>
+				<!-- <img class="mb-4" src="Revature-Logo2.jpg" alt="" width="270"
+					height="120"> -->
+				<h1 class="h3 mb-3 fw-normal text-white">Please Register</h1> 
+
+                <!-- Login Id -->
+                <div class="form-floating">
+					<input type="text" class="form-control" formControlName="loginid"
+						id="floatingId"> 
+                        <label for="floatingInput">Login Id</label>
+				</div>
+
+                <!-- Username -->
+                <div class="form-floating">
+					<input type="text" class="form-control" formControlName="username" name="username"
+						id="floatingUsername" placeholder="Username"> <label
+						for="floatingInput">Username</label>
+				</div>
+                <div class="alert alert-danger" *ngIf="loginForm.get('username').hasError('required')
+                && loginForm.get('username').dirty">Please enter Username</div>
+                
+                <!-- Password -->
+				<div class="form-floating">
+					<input type="password" class="form-control" formControlName="password" name="password"
+						id="floatingPassword" placeholder="Password"> <label
+						for="floatingPassword">Password</label>
+				</div>
+                <div class="alert alert-danger" *ngIf="loginForm.get('password').hasError('required')
+                && loginForm.get('password').dirty">Please enter Password</div>
+
+                <!-- Confirm Password -->
+				<div class="form-floating">
+					<input type="password" class="form-control" formControlName="confirmpassword" name="confirmpassword"
+						id="floatingConfirmPassword" placeholder="Confirm Password"> <label
+						for="floatingPassword">Confirm Password</label>
+				</div>
+
+				<button class="w-40 btn btn-md btn-primary" type="submit" [disabled]="!loginForm.valid"
+					value="SignUp">Signup</button>
+				<button class="w-40 btn btn-md btn-danger" type="reset"
+					value="Clear">Reset</button>
+            
+                </fieldset>
+			</form>
+		</main>
+
+		<footer class="mt-auto text-white-50">
+            Created by Group #2 - AB, DZ,TW, WZ
+          </footer>
+	</div>
+</body>
+</html>

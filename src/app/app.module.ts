@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginInfoComponent } from './components/login-info/login-info.component';
 import { LoginAddComponent } from './components/login-add/login-add.component';
 import { LoginListComponent } from './components/login-list/login-list.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -44,9 +46,11 @@ import { LoginListComponent } from './components/login-list/login-list.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
