@@ -12,5 +12,5 @@ export class RegistrationService {
     })
   }
 
-  constructor(public httpClient:HttpClient) { }
+  
 }

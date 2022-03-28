@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppointmentService } from 'src/app/services/appointment.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class AppointmentAddComponent implements OnInit {
   appointmentForm!: FormGroup;
   successMessage!: string;
 
-  constructor(public formBuilder:FormBuilder, public loginService:LoginService,public router:Router) { }
+  constructor(public formBuilder:FormBuilder, public appointmentService:AppointmentService,public router:Router) { }
 
 
   ngOnInit(): void {
@@ -29,7 +30,7 @@ export class AppointmentAddComponent implements OnInit {
   displayAppointmentInfo()
   {
     console.log(this.appointmentForm.value)
-    this.loginService.saveLogin(this.appointmentForm.value).subscribe((data:any) => {
+    this.appointmentService.saveAppointment(this.appointmentForm.value).subscribe((data:any) => {
       this.successMessage = 'Appointment with id '+this.appointmentForm.value.loginid+' saved successfully';
       
     },err =>this.router.navigate(['appointmentInfo']) )

@@ -22,6 +22,8 @@ import { LoginAddComponent } from './components/login-add/login-add.component';
 import { LoginListComponent } from './components/login-list/login-list.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
+import { BillService } from './services/bill.service';
+import { AppointmentService } from './services/appointment.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,7 @@ import { LoginService } from './services/login.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [LoginService],
+  providers: [LoginService,BillService,AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
