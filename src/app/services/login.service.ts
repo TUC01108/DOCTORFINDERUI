@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { Login } from '../models/login';
 
-const loginURL = "http://localhost:5055/login"
+const loginURL = "http://localhost:8080/login"
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +25,12 @@ export class LoginService {
       retry(0),
       catchError(this.errorHandler)
     );
+  }
+
+  // get a single login
+  getLogin(loginid:number) : Observable<Login>
+  {
+    return this.httpClient.get<Login> (`${loginURL}/${loginid}`);
   }
 
   // save a single login

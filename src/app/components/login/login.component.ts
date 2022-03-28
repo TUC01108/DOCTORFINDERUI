@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginForm!: FormGroup;
+  successMessage!: string;
 
-  constructor() { }
+  constructor(public formBuilder:FormBuilder, public loginService:LoginService,public router:Router) { }
 
   ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      loginid : ['', [Validators.required]],
+      username : ['',[Validators.required]],
+      password : ['',[Validators.required]]
+    })
   }
 
   /*
@@ -36,5 +46,7 @@ export class LoginComponent implements OnInit {
     
   }
   */
+
+  
 
 }
