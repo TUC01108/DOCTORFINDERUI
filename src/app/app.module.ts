@@ -24,7 +24,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
 import { BillService } from './services/bill.service';
 import { AppointmentService } from './services/appointment.service';
-import { RouterModule, Routes } from '@angular/router';
 
 
 @NgModule({

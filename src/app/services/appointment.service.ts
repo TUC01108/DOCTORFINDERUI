@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { Appointment } from '../models/appointment';
 
-const appointmentURL = "http://localhost:8080/appointment"
+const appointmentURL = "http://localhost:5050/appointment"
 @Injectable({
   providedIn: 'root'
 })

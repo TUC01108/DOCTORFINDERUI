@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Bill } from 'src/app/models/bill';
+import { BillService } from 'src/app/services/bill.service';
 
 @Component({
   selector: 'app-bill-info',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillInfoComponent implements OnInit {
 
-  constructor() { }
+  bills: Bill[] = [];
+  public errorMessage!:string;
+
+  constructor(public billService: BillService) {
+    this.billService.getBills().subscribe((data:any) => {
+      this.bills = data;
+    })
+   }
 
   ngOnInit(): void {
   }

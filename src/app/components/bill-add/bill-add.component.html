@@ -99,20 +99,19 @@ button {
 				<h1 class="h3 mb-3 fw-normal text-white">Add Bill Here</h1> 
 
                 <!-- Bill Id -->
+				<!--
                 <div class="form-floating">
 					<input type="text" class="form-control" formControlName="billid" name="billid"
 						id="floatingId" placeholder="billid"> 
                         <label for="floatingId">Bill Id</label>
 				</div>
-
+				-->
                 <!-- billAmount -->
                 <div class="form-floating">
 					<input type="text" class="form-control" formControlName="billAmount" name="billAmount"
 						id="floatingDate" placeholder="billAmount"> <label
 						for="floatingDate">Bill Amount</label>
 				</div>
-                <div class="alert alert-danger" *ngIf="billForm.get('username').hasError('required')
-                && billForm.get('username').dirty">Please enter Username</div>
 
                 <!-- patientid -->
 				<div class="form-floating">
@@ -129,16 +128,16 @@ button {
 				</div>
 
 				<button class="w-40 btn btn-md btn-primary" type="submit" [disabled]="!billForm.valid"
-					value="SignUp">Signup</button>
+					value="SignUp">Submit</button>
 				<button class="w-40 btn btn-md btn-danger" type="reset"
-					value="Clear">Reset</button>
+					value="Clear">Clear</button>
             
                 </fieldset>
 			</form>
 		</main>
 
 		<footer class="mt-auto text-white-50">
-            Created by Group #2 - AB, DZ,TW, WZ
+            Created by Group #2 - DZ, WZ, TW
           </footer>
 	</div>
 </body>

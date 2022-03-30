@@ -1,1 +1,17 @@
-<p>bill-info works!</p>
+<h1>Displaying Bill Summary</h1>
+<font color="red"><h2>{{errorMessage}}</h2></font>
+<table border="10" [cellSpacing]="10" cellPadding="10">
+    <tr>
+        <th>Bill Id</th>
+        <th>Bill Amount</th>
+        <th>Patient Id</th>
+        <th>Doctor Id</th>
+    </tr>
+    <tr *ngFor="let bill of bills">
+    <td>{{bill.billid}}</td>
+    <td>{{bill.billAmount}}</td>
+    <td>{{bill.patientid}}</td>
+    <td>{{bill.doctorid}}</td>
+    
+    </tr>
+</table>

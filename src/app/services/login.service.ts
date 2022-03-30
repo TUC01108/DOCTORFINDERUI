@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { Login } from '../models/login';
 
-const loginURL = "http://localhost:8080"
+const loginURL = "http://localhost:5050/login"
 @Injectable({
   providedIn: 'root'
 })

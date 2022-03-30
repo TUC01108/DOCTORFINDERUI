@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppointmentService } from 'src/app/services/appointment.service';
-import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-appointment-add',
@@ -19,7 +18,6 @@ export class AppointmentAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.appointmentForm = this.formBuilder.group({
-      appointmentid : [''],
       date : ['',[Validators.required]],
       symptom : ['',],
       patientid : [''],

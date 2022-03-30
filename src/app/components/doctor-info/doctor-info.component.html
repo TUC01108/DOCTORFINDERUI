@@ -1,1 +1,16 @@
-<p>doctor-info works!</p>
+<h1>Displaying Doctor Summary</h1>
+<font color="red"><h2>{{errorMessage}}</h2></font>
+<table border="10" [cellSpacing]="10" cellPadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Specialty</th>
+        <th>City</th>
+    </tr>
+    <tr *ngFor="let doctor of doctors">
+    <td>{{doctor.name}}</td>
+    <td>{{doctor.email}}</td>
+    <td>{{doctor.specialty}}</td>
+    <td>{{doctor.city}}</td>
+    </tr>
+</table>

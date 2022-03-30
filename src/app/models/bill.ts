@@ -1,7 +1,7 @@
 export class Bill {
 
     billid ?: number;
-    billAmount ?: string;
+    billAmount ?: number;
     patientid ?: number;
     doctorid ?: number;
 }
