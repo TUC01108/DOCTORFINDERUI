@@ -1,6 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Doctor Info</title>
+<style>
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 0px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+form {
+ padding-top: 80px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+    margin-top: 0px;
+  margin-bottom: 5px;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+}
+.form-signin input[type="radio"] {
+  margin-bottom: 10px;
+  margin-right: 4px;
+  margin-left:10px;
+}
+</style>
+</head>
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<header class="mb-auto">
+			<div>
+				<h3 class="float-md-start mb-0">DoctorFinder</h3>
+				<nav class="nav nav-masthead justify-content-center float-md-end">
+					<a class="nav-link active text-white-50" aria-current="page"
+						href="index.jsp">Home</a> <a class="nav-link text-white-50"
+						href="#">Help</a> <a class="nav-link text-white-50" href="#">Contact</a>
+				</nav>
+			</div>
+		</header>
+		<main class="px-3">
 <h1>Displaying Doctor Summary</h1>
+<br/>
 <font color="red"><h2>{{errorMessage}}</h2></font>
-<table border="10" [cellSpacing]="10" cellPadding="10">
+<table border="10" [cellSpacing]="10" cellPadding="10" align="center">
     <tr>
         <th>Name</th>
         <th>Email</th>
@@ -14,3 +76,10 @@
     <td>{{doctor.city}}</td>
     </tr>
 </table>
+</main>
+<br/>
+<br/>
+<footer class="mt-auto text-white-50">
+  Created by Group #2 - DZ, WZ, TW
+  </footer>
+</div>

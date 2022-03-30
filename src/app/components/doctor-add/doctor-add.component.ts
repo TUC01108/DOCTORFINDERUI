@@ -19,7 +19,8 @@ export class DoctorAddComponent implements OnInit {
       name : ['',[Validators.required]],
       email : ['',[Validators.required]],
       password : ['',[Validators.required,Validators.minLength(4)]],
-      specialty : ['',[Validators.required]]
+      specialty : ['',[Validators.required]],
+      city : ['']
     })
   }
   displayDoctorInfo()
