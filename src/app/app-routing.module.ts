@@ -5,17 +5,20 @@ import { AppointmentInfoComponent } from './components/appointment-info/appointm
 import { BillAddComponent } from './components/bill-add/bill-add.component';
 import { BillInfoComponent } from './components/bill-info/bill-info.component';
 import { DoctorAddComponent } from './components/doctor-add/doctor-add.component';
+import { DoctorHomeComponent } from './components/doctor-home/doctor-home.component';
 import { DoctorInfoComponent } from './components/doctor-info/doctor-info.component';
 import { LoginAddComponent } from './components/login-add/login-add.component';
 import { LoginInfoComponent } from './components/login-info/login-info.component';
 import { LoginComponent } from './components/login/login.component';
 import { PatientAddComponent } from './components/patient-add/patient-add.component';
+import { PatientHomeComponent } from './components/patient-home/patient-home.component';
 import { PatientInfoComponent } from './components/patient-info/patient-info.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
 const routes: Routes = [
-  { path:'', redirectTo : 'loginInfo', pathMatch :'full'},
+  { path:'', redirectTo : 'login', pathMatch :'full'},
   { path: 'login', component : LoginComponent},
   { path: 'loginAdd', component : LoginAddComponent},
   { path:'loginInfo', component : LoginInfoComponent},
@@ -27,6 +30,10 @@ const routes: Routes = [
   { path: 'billInfo', component : BillInfoComponent},
   { path: 'appointmentAdd', component : AppointmentAddComponent},
   { path: 'appointmentInfo', component : AppointmentInfoComponent},
+  { path: 'patientHome', component : PatientHomeComponent},
+  { path: 'doctorHome', component : DoctorHomeComponent},
+  { path: 'register', component : RegisterComponent},
+
 ];
 
 @NgModule({

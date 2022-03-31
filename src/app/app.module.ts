@@ -24,6 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
 import { BillService } from './services/bill.service';
 import { AppointmentService } from './services/appointment.service';
+import { PatientHomeComponent } from './components/patient-home/patient-home.component';
+import { DoctorHomeComponent } from './components/doctor-home/doctor-home.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -44,7 +47,10 @@ import { AppointmentService } from './services/appointment.service';
     AppointmentAddComponent,
     LoginInfoComponent,
     LoginAddComponent,
-    LoginListComponent
+    LoginListComponent,
+    PatientHomeComponent,
+    DoctorHomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

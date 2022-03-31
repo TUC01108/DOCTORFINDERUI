@@ -101,27 +101,34 @@ function validate() {
       <input type="text" class="form-control" formControlName="username" name="username" id="floatingInput" placeholder="Username">
       <label for="floatingInput">Username</label>
     </div>
+    <div class="alert alert-danger" *ngIf="loginForm.get('username').hasError('required')
+                && loginForm.get('username').dirty">Please enter Username</div>
 
     <div class="form-floating">
       <input type="password" class="form-control" formControlName="password" name="password" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
+    <div class="alert alert-danger" *ngIf="loginForm.get('password').hasError('required')
+                && loginForm.get('password').dirty">Please enter Password</div>
 
     <div class="checkbox mb-3 text-white">
       <label>
-        <input type="radio" value="patient" name="accounttype">Patient
+        <input type="radio" value="patient" formControlName="patient" name="accounttype">Patient
       </label>
       <label>
-        <input type="radio" value="doctor" name="accounttype"> Doctor
+        <input type="radio" value="doctor" formControlName="doctor" name="accounttype"> Doctor
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" id="btnSubmit">Sign in</button>
+    <div class="alert alert-danger" *ngIf="loginForm.get('accounttype').hasError('required')
+    ">Please Choose Patient or Doctor</div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit" id="btnSubmit" [disabled]="!loginForm.valid">Sign in</button>
     <p class="mt-5 mb-3 text-muted">© 2022</p>
   </form>
 </main>
 
 <footer class="mt-auto text-white-50">
-  Created by Group #2 - DZ, WZ, TW
+  Created by Group #2 - DR, WZ, TW
   </footer>
 </div>
 
