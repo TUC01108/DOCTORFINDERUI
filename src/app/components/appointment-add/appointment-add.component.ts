@@ -18,8 +18,8 @@ export class AppointmentAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.appointmentForm = this.formBuilder.group({
-      date : ['',[Validators.required]],
-      symptom : ['',],
+      date : [''],
+      symptom : [''],
       patientid : [''],
       doctorid : ['']
     })
@@ -29,7 +29,7 @@ export class AppointmentAddComponent implements OnInit {
   {
     console.log(this.appointmentForm.value)
     this.appointmentService.saveAppointment(this.appointmentForm.value).subscribe((data:any) => {
-      this.successMessage = 'Appointment with id '+this.appointmentForm.value.loginid+' saved successfully';
+      this.successMessage = 'Appointment with id '+this.appointmentForm.value.appointmentid+' saved successfully';
       
     },err =>this.router.navigate(['appointmentInfo']) )
   }

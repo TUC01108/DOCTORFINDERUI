@@ -68,12 +68,14 @@ form {
         <th>Doctor Id</th>
         <th>Patient Id</th>
         <th>Symptom</th>
+        <th>Status</th>
     </tr>
     <tr *ngFor="let appointment of appointments">
     <td>{{appointment.date}}</td>
     <td>{{appointment.doctorid}}</td>
     <td>{{appointment.patientid}}</td>
     <td>{{appointment.symptom}}</td>
+    <td>{{appointment.status}}</td>
     </tr>
 </table>
 </main>

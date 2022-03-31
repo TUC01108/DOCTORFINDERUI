@@ -35,3 +35,23 @@
     <td>{{patient.symptom}}</td>
     </tr>
 </table>
+<br/>
+<h1>################################################################</h1>
+<br/>
+<h1>DOCTOR CAN APPROVE REJECT Appointments</h1>
+<table border="10" [cellSpacing]="10" cellPadding="10" align="center">
+    <tr>
+        <th>Date</th>
+        <th>Doctor Id</th>
+        <th>Patient Id</th>
+        <th>Symptom</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let appointment of appointments">
+        <td>{{appointment.date}}</td>
+        <td>{{appointment.doctorid}}</td>
+        <td>{{appointment.patientid}}</td>
+        <td>{{appointment.symptom}}</td>
+        <td><button class="btn btn-danger" (click)="removeAppointment(appointment.appointmentid)">Delete</button></td>
+    </tr>
+</table>

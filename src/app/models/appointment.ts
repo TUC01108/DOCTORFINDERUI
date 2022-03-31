@@ -6,6 +6,6 @@ export class Appointment {
     symptom ?: string;
     patientid ?: number;
     doctorid ?: number;
-
+    status ?: boolean;
     
 }

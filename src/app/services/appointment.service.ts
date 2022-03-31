@@ -17,7 +17,7 @@ export class AppointmentService {
 
   constructor(public httpClient:HttpClient) { }
 
-  // getting all the bills
+  // getting all the appointments
   getAppointments() : Observable<Appointment []>  
   {
     return this.httpClient.get<Appointment []> (appointmentURL)
@@ -30,6 +30,11 @@ export class AppointmentService {
   // save a single appointment
   saveAppointment(appointment:Appointment) : Observable<Appointment> {
     return this.httpClient.post<Appointment> (appointmentURL,appointment,this.httpOptions);
+  }
+
+  // delete a single appointment
+  deleteAppointment(appointmentid:number) : Observable<Appointment> {
+    return this.httpClient.delete<Appointment> (`${appointmentURL}/${appointmentid}`);
   }
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) 
