@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Doctor } from '../models/doctor';
 import { Patient } from '../models/patient';
 const patientURL = "http://localhost:5050/patient"
 @Injectable({
@@ -29,6 +30,11 @@ export class PatientService {
   // save a single patient
   savePatient(patient:Patient) : Observable<Patient> {
     return this.httpClient.post<Patient> (patientURL,patient,this.httpOptions);
+  }
+
+  searchPatientByDoctorAssigned(patient:Patient) : Observable<Patient []>
+  {
+    return this.httpClient.get<Patient []> (`${patientURL}/getPatientByDoctorAssigned/${patient.doctorAssigned}`);
   }
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) 

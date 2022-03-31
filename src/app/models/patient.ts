@@ -9,5 +9,6 @@ export class Patient {
     doctorAssigned ?: string;
     billAmount ?: number;
     loginid ?: number;
+    doctorid ?: number;
     
 }

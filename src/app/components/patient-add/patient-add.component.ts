@@ -21,7 +21,8 @@ export class PatientAddComponent implements OnInit {
       password : ['',[Validators.required,Validators.minLength(4)]],
       city : [''],
       doctorAssigned : [''],
-      symptom : ['']
+      symptom : [''],
+      doctorid : ['']
     })
   }
   displayPatientInfo()

@@ -159,6 +159,13 @@ button {
 						id="symptom" placeholder="symptom"> <label
 						for="floatingInput">Symptom</label>
 				</div>
+
+				<!-- Doctor Id -->
+                <div class="form-floating">
+					<input type="text" class="form-control" formControlName="doctorid" name="doctorid"
+						id="doctorid" placeholder="doctorid"> <label
+						for="floatingInput">Doctor Id</label>
+				</div>
                 
 
 				<button class="w-40 btn btn-md btn-primary" type="submit" [disabled]="!patientForm.valid"
