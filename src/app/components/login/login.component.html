@@ -113,10 +113,10 @@ function validate() {
 
     <div class="checkbox mb-3 text-white">
       <label>
-        <input type="radio" value="patient" formControlName="patient" name="accounttype">Patient
+        <input type="radio" value="patient" formControlName="accounttype" name="accounttype">Patient
       </label>
       <label>
-        <input type="radio" value="doctor" formControlName="doctor" name="accounttype"> Doctor
+        <input type="radio" value="doctor" formControlName="accounttype" name="accounttype"> Doctor
       </label>
     </div>
     <div class="alert alert-danger" *ngIf="loginForm.get('accounttype').hasError('required')

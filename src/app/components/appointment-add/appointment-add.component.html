@@ -131,11 +131,19 @@ button {
 						for="floatingPatientId">Patient Id</label>
 				</div>
 
-                <!-- doctorid -->
+                <!-- doctorAssigned 
+				<div class="form-floating">
+					<input type="text" class="form-control" formControlName="doctorAssigned" name="doctorAssigned"
+						id="floatingDoctorAssigned" placeholder="doctorAssigned"> <label
+						for="floatingDoctorAssigned">Doctor Assigned</label>
+				</div>
+				-->
+
+				<!-- doctorid -->
 				<div class="form-floating">
 					<input type="text" class="form-control" formControlName="doctorid" name="doctorid"
 						id="floatingDoctorId" placeholder="patientid"> <label
-						for="floatingDoctorId">Doctor Id</label>
+						for="floatingDoctorId">Doctor Id (if known)</label>
 				</div>
 
 				<button class="w-40 btn btn-md btn-primary" type="submit" [disabled]="!appointmentForm.valid"

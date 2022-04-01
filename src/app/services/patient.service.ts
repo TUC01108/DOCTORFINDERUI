@@ -32,6 +32,14 @@ export class PatientService {
     return this.httpClient.post<Patient> (patientURL,patient,this.httpOptions);
   }
 
+  updatePatient(patientId:number,patient:Patient): Observable<Patient> {
+    return this.httpClient.put<Patient>(`${patientURL}/${patientId}`,patient,this.httpOptions)
+    .pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    );
+  }
+
   searchPatientByDoctorAssigned(patient:Patient) : Observable<Patient []>
   {
     return this.httpClient.get<Patient []> (`${patientURL}/getPatientByDoctorAssigned/${patient.doctorAssigned}`);

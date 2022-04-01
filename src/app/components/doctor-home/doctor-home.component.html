@@ -1,12 +1,109 @@
-<font color="green"><h2>{{successMessage}}</h2></font>
-<h1>TO ADD: update profile, view profile, appointment approve/deny, appointment confirmed, patient approve/deny, patient confirmed</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Doctor Home</title>
+<style>
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 0px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+form {
+ padding-top: 80px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+    margin-top: 0px;
+  margin-bottom: 5px;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+}
+.form-signin input[type="radio"] {
+  margin-bottom: 10px;
+  margin-right: 4px;
+  margin-left:10px;
+}
+</style>
+</head>
 <a href="billAdd">Bill Add</a> |
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<header class="mb-auto">
+			<div>
+				<h3 class="float-md-start mb-0">DoctorFinder</h3>
+				<nav class="nav nav-masthead justify-content-center float-md-end">
+					<a class="nav-link active text-white-50" aria-current="page"
+						href="index.jsp">Home</a> <a class="nav-link text-white-50"
+						href="#">Help</a> <a class="nav-link text-white-50" href="#">Contact</a>
+				</nav>
+			</div>
+		</header>
+		<main class="px-3">
+<font color="green"><h2>{{successMessage}}</h2></font>
+
+<!--<h1>TO ADD: update profile, appointment confirmed, patient approve/deny</h1>
+
 <br/>
-<!-- ADD ALL FUNCTUIONALITY UNDER HERE (we'll cleanup later)-->
+-->
+<!-- ADD ALL FUNCTIONALITY UNDER HERE (we'll cleanup later)-->
+<h1>Doctor Home Page</h1>
+
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 <h1>################################################################</h1>
+<h3>Enter Doctor ID for Profile Information</h3>
+<form novalidate [formGroup]="doctorForm" (ngSubmit)="displayDoctorInfo()">
+<input type="text" placeholder="doctorid" name="doctorid" formControlName="doctorid">
+<button class="w-40 btn btn-md btn-primary" type="submit"
+					value="Submit">Submit</button>
+        </form>
 <br/>
-<a href="editDoctorProfile">Edit your profile information</a>
+<h1>Doctor Information</h1>
+<br/>
+<table border="10" [cellSpacing]="10" cellPadding="10" align="center">
+  <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Specialty</th>
+      <th>City</th>
+  </tr>
+  <tr *ngFor="let doctor of doctors">
+  <td>{{doctor.name}}</td>
+  <td>{{doctor.email}}</td>
+  <td>{{doctor.password}}</td>
+  <td>{{doctor.specialty}}</td>
+  <td>{{doctor.city}}</td>
+  </tr>
+</table>
+<br/>
+<a href="doctorUpdate">Edit your profile information</a>
+<br/>
+<h1>################################################################</h1>
 <br/>
 <h2>Search for patient by doctor assigned</h2>
 <form novalidate [formGroup]="patientForm" (ngSubmit)="displayDoctorHome()">
@@ -15,7 +112,7 @@
 					value="SignUp">Submit</button>
 </form>
 <br/>
-<h1>################################################################</h1>
+
 <br/>
 <table border="10" [cellSpacing]="10" cellPadding="10" align="center">
     <tr>
@@ -39,19 +136,28 @@
 <h1>################################################################</h1>
 <br/>
 <h1>DOCTOR CAN APPROVE REJECT Appointments</h1>
+<input type="text" placeholder="Doctor Id">
+<br/>
 <table border="10" [cellSpacing]="10" cellPadding="10" align="center">
     <tr>
         <th>Date</th>
         <th>Doctor Id</th>
         <th>Patient Id</th>
         <th>Symptom</th>
-        <th>Delete</th>
+        <th>Reject</th>
     </tr>
     <tr *ngFor="let appointment of appointments">
         <td>{{appointment.date}}</td>
         <td>{{appointment.doctorid}}</td>
         <td>{{appointment.patientid}}</td>
         <td>{{appointment.symptom}}</td>
-        <td><button class="btn btn-danger" (click)="removeAppointment(appointment.appointmentid)">Delete</button></td>
+        <td><button class="btn btn-danger" (click)="removeAppointment(appointment.appointmentid)">Reject</button></td>
     </tr>
 </table>
+</main>
+<br/>
+<br/>
+<footer class="mt-auto text-white-50">
+  Created by Group #2 - DR, WZ, TW
+  </footer>
+</div>

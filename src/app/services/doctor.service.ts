@@ -32,6 +32,21 @@ export class DoctorService {
     return this.httpClient.post<Doctor> (doctorURL,doctor,this.httpOptions);
   }
 
+   //Update Doctor
+   updateDoctor(doctorid:number,doctor:Doctor): Observable<Doctor> {
+    return this.httpClient.put<Doctor>(`${doctorURL}/${doctorid}`,doctor,this.httpOptions)
+ 
+  }
+
+  searchDoctorBySpecialty(doctor:Doctor) : Observable<Doctor []>
+  {
+    return this.httpClient.get<Doctor []> (`${doctorURL}/searchDoctorBySpecialty/${doctor.specialty}`);
+  }
+
+  searchDoctorById(doctor:Doctor): Observable<Doctor> {
+    return this.httpClient.get<Doctor>(`${doctorURL}/${doctor.doctorid}`);
+  }
+
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) 
   {
     let errorMessage = '';

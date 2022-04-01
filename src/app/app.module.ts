@@ -27,6 +27,9 @@ import { AppointmentService } from './services/appointment.service';
 import { PatientHomeComponent } from './components/patient-home/patient-home.component';
 import { DoctorHomeComponent } from './components/doctor-home/doctor-home.component';
 import { RegisterComponent } from './components/register/register.component';
+import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
+import { PatientUpdatedComponent } from './components/patient-updated/patient-updated.component';
+import { PatientService } from './services/patient.service';
 
 
 @NgModule({
@@ -50,7 +53,9 @@ import { RegisterComponent } from './components/register/register.component';
     LoginListComponent,
     PatientHomeComponent,
     DoctorHomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    DoctorUpdateComponent,
+    PatientUpdatedComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,7 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [LoginService,BillService,AppointmentService],
+  providers: [LoginService,BillService,AppointmentService,PatientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register Patient</title>
+<title>Update Account</title>
 <font color="green"><h2>{{successMessage}}</h2></font>
 
 <style>
@@ -92,11 +92,18 @@ button {
 		</header>
 
 		<main class="form-signin">
-			<form novalidate [formGroup]="patientForm" (ngSubmit)="displayPatientInfo()">
+			<form novalidate [formGroup]="doctorUpdateForm" (ngSubmit)="updateDoctorInfo()">
             <fieldset>
 				<!-- <img class="mb-4" src="Revature-Logo2.jpg" alt="" width="270"
 					height="120"> -->
-				<h1 class="h3 mb-3 fw-normal text-white">Please Register Patient</h1> 
+				<h1 class="h3 mb-3 fw-normal text-white">Enter Updates to Account</h1> 
+
+				<!-- Doctor Id -->
+                <div class="form-floating">
+					<input type="text" class="form-control" formControlName="doctorid" name="doctorid"
+						id="floatingId" placeholder="doctorid"> <label
+						for="floatingId">Doctor Id</label>
+				</div>
 
                 <!-- Name -->
                 <div class="form-floating">
@@ -104,8 +111,6 @@ button {
 						id="floatingUsername" placeholder="name"> <label
 						for="floatingInput">Name</label>
 				</div>
-                <div class="alert alert-danger" *ngIf="patientForm.get('name').hasError('required')
-                && patientForm.get('name').dirty">Name</div>
 
                 <!-- Email -->
                 <div class="form-floating">
@@ -113,27 +118,20 @@ button {
 						id="email" placeholder="email"> <label
 						for="floatingInput">Email</label>
 				</div>
-                <div class="alert alert-danger" *ngIf="patientForm.get('email').hasError('required')
-                && patientForm.get('email').dirty">Email</div>
                 
                 <!-- Password -->
 				<div class="form-floating">
 					<input type="password" class="form-control" formControlName="password" name="password"
-						id="floatingPassword" placeholder="Password"> <label
+						id="floatingPassword" placeholder="password"> <label
 						for="floatingPassword">Password</label>
 				</div>
-                <div class="alert alert-danger" *ngIf="patientForm.get('password').hasError('required')
-                && patientForm.get('password').dirty">Please enter Password</div>
-				<div class="alert alert-danger" *ngIf="patientForm.get('password').hasError('minlength')
-                && patientForm.get('password').dirty">Please enter Password at least 4 characters in length.</div>
 
-                <!-- Confirm Password 
-				<div class="form-floating">
-					<input type="password" class="form-control" name="confirmpassword"
-						id="floatingConfirmPassword" placeholder="Confirm Password"> <label
-						for="floatingPassword">Confirm Password</label>
+                <!-- Specialty -->
+                <div class="form-floating">
+					<input type="text" class="form-control" formControlName="specialty" name="specialty"
+						id="specialty" placeholder="specialty"> <label
+						for="floatingInput">Specialty</label>
 				</div>
-				-->
 
 				<!-- City -->
                 <div class="form-floating">
@@ -141,31 +139,10 @@ button {
 						id="city" placeholder="city"> <label
 						for="floatingInput">City</label>
 				</div>
-
-				<!-- Doctor Assigned -->
-                <div class="form-floating">
-					<input type="text" class="form-control" formControlName="doctorAssigned" name="doctorAssigned"
-						id="doctorAssigned" placeholder="doctorAssigned"> <label
-						for="floatingInput">Doctor Assigned</label>
-				</div>
-
-                <!-- Symptom -->
-                <div class="form-floating">
-					<input type="text" class="form-control" formControlName="symptom" name="symptom"
-						id="symptom" placeholder="symptom"> <label
-						for="floatingInput">Symptom</label>
-				</div>
-
-				<!-- Doctor Id -->
-                <div class="form-floating">
-					<input type="text" class="form-control" formControlName="doctorid" name="doctorid"
-						id="doctorid" placeholder="doctorid"> <label
-						for="floatingInput">Doctor Id</label>
-				</div>
                 
 
-				<button class="w-40 btn btn-md btn-primary" type="submit" [disabled]="!patientForm.valid"
-					value="SignUp">Signup</button>
+				<button class="w-40 btn btn-md btn-primary" type="submit" [disabled]="!doctorUpdateForm.valid"
+					value="SignUp">Update</button>
 				<button class="w-40 btn btn-md btn-danger" type="reset"
 					value="Clear">Reset</button>
             

@@ -13,7 +13,10 @@ import { LoginComponent } from './components/login/login.component';
 import { PatientAddComponent } from './components/patient-add/patient-add.component';
 import { PatientHomeComponent } from './components/patient-home/patient-home.component';
 import { PatientInfoComponent } from './components/patient-info/patient-info.component';
+import { PatientUpdatedComponent } from './components/patient-updated/patient-updated.component';
 import { RegisterComponent } from './components/register/register.component';
+import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
+
 
 
 
@@ -33,6 +36,8 @@ const routes: Routes = [
   { path: 'patientHome', component : PatientHomeComponent},
   { path: 'doctorHome', component : DoctorHomeComponent},
   { path: 'register', component : RegisterComponent},
+  { path: 'doctorUpdate', component : DoctorUpdateComponent},
+  { path: 'patientUpdated', component : PatientUpdatedComponent}
 
 ];
 

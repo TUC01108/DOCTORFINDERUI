@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Sign Up</title>
+<title>Patient Profile</title>
 <font color="green"><h2>{{successMessage}}</h2></font>
 
 <style>
@@ -41,7 +41,7 @@ form {
 	margin-bottom: 5px;
 }
 
-.form-signin input[type="email"] {
+.form-signin input[type="age"] {
 	margin-bottom: 5px;
 }
 
@@ -92,18 +92,11 @@ button {
 		</header>
 
 		<main class="form-signin">
-			<form novalidate [formGroup]="doctorForm" (ngSubmit)="displayDoctorInfo()">
+			<form novalidate [formGroup]="patientForm" (ngSubmit)="updatePatientInfo()">
             <fieldset>
 				<!-- <img class="mb-4" src="Revature-Logo2.jpg" alt="" width="270"
 					height="120"> -->
-				<h1 class="h3 mb-3 fw-normal text-white">Please Register Doctor</h1> 
-
-                <!-- Doctor Id 
-                <div class="form-floating">
-					<input type="text" class="form-control" formControlName="doctorid"
-						id="floatingId"> 
-                        <label for="floatingInput">Doctor Id</label>
-				</div>-->
+				<h1 class="h3 mb-3 fw-normal text-white">Please Update Patient Details</h1> 
 
                 <!-- Name -->
                 <div class="form-floating">
@@ -111,51 +104,45 @@ button {
 						id="floatingUsername" placeholder="name"> <label
 						for="floatingInput">Name</label>
 				</div>
-                <div class="alert alert-danger" *ngIf="doctorForm.get('name').hasError('required')
-                && doctorForm.get('name').dirty">Name</div>
 
-                <!-- Email -->
+                <!-- Age -->
                 <div class="form-floating">
-					<input type="text" class="form-control" formControlName="email" name="name"
-						id="email" placeholder="email"> <label
-						for="floatingInput">Email</label>
+					<input type="text" class="form-control" formControlName="age" name="age"
+						id="age" placeholder="age"> <label
+						for="floatingInput">Age</label>
 				</div>
-                <div class="alert alert-danger" *ngIf="doctorForm.get('email').hasError('required')
-                && doctorForm.get('email').dirty">Email</div>
                 
-                <!-- Password -->
+                <!-- Gender -->
 				<div class="form-floating">
-					<input type="password" class="form-control" formControlName="password" name="password"
-						id="floatingPassword" placeholder="Password"> <label
-						for="floatingPassword">Password</label>
+					<input type="text" class="form-control" formControlName="gender" name="gender"
+						id="floatingPassword" placeholder="gender"> <label
+						for="floatingPassword">Gender</label>
 				</div>
-                <div class="alert alert-danger" *ngIf="doctorForm.get('password').hasError('required')
-                && doctorForm.get('password').dirty">Please enter Password</div>
 
-                <!-- Confirm Password -->
+                <!-- DOB -->
 				<div class="form-floating">
-					<input type="password" class="form-control" name="confirmpassword"
-						id="floatingConfirmPassword" placeholder="Confirm Password"> <label
-						for="floatingPassword">Confirm Password</label>
+					<input type="text" class="form-control" formControlName="dob" name="dob"
+						id="floatingConfirmPassword" placeholder="dob"> <label
+						for="floatingPassword">DOB</label>
 				</div>
 
-                <!-- Specialty -->
+                <!-- Height -->
                 <div class="form-floating">
-					<input type="text" class="form-control" formControlName="specialty" name="specialty"
-						id="specialty" placeholder="specialty"> <label
-						for="floatingInput">Specialty</label>
+					<input type="text" class="form-control" formControlName="height" name="height"
+						id="height" placeholder="height"> <label
+						for="floatingInput">Height</label>
 				</div>
 
-				<!-- City -->
+				<!-- Weight -->
                 <div class="form-floating">
-					<input type="text" class="form-control" formControlName="city" name="city"
-						id="city" placeholder="city"> <label
-						for="floatingInput">City</label>
+					<input type="text" class="form-control" formControlName="weight" name="weight"
+						id="weight" placeholder="weight"> <label
+						for="floatingInput">Weight</label>
 				</div>
                 
 
-				<button class="w-40 btn btn-md btn-primary" type="submit" [disabled]="!doctorForm.valid"
-					value="SignUp">Signup</button>
+				<button class="w-40 btn btn-md btn-primary" type="submit" [disabled]="!patientForm.valid"
+					value="SignUp">Submit</button>
 				<button class="w-40 btn btn-md btn-danger" type="reset"
 					value="Clear">Reset</button>
             
