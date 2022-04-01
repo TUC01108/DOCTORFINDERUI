@@ -75,32 +75,7 @@ form {
 <br/>
 <br/>
 <h1>################################################################</h1>
-<h3>Enter Doctor ID for Profile Information</h3>
-<form novalidate [formGroup]="doctorForm" (ngSubmit)="displayDoctorInfo()">
-<input type="text" placeholder="doctorid" name="doctorid" formControlName="doctorid">
-<button class="w-40 btn btn-md btn-primary" type="submit"
-					value="Submit">Submit</button>
-        </form>
-<br/>
-<h1>Doctor Information</h1>
-<br/>
-<table border="10" [cellSpacing]="10" cellPadding="10" align="center">
-  <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Specialty</th>
-      <th>City</th>
-  </tr>
-  <tr *ngFor="let doctor of doctors">
-  <td>{{doctor.name}}</td>
-  <td>{{doctor.email}}</td>
-  <td>{{doctor.password}}</td>
-  <td>{{doctor.specialty}}</td>
-  <td>{{doctor.city}}</td>
-  </tr>
-</table>
-<br/>
+
 <a href="doctorUpdate">Edit your profile information</a>
 <br/>
 <h1>################################################################</h1>
@@ -154,6 +129,39 @@ form {
         <td><button class="btn btn-danger" (click)="removeAppointment(appointment.appointmentid)">Reject</button></td>
     </tr>
 </table>
+<h1>#######################################################</h1>
+<br/>
+<h1>Working on the below</h1>
+<br/>
+<br/>
+<br/>
+<br/>
+<h3>Enter Doctor ID for Profile Information</h3>
+<form novalidate [formGroup]="doctorForm" (ngSubmit)="displayDoctorInfo()">
+<input type="text" placeholder="doctorid" name="doctorid" formControlName="doctorid">
+<button class="w-40 btn btn-md btn-primary" type="submit"
+					value="Submit">Submit</button>
+        </form>
+<br/>
+<h1>Doctor Information</h1>
+<br/>
+<table border="10" [cellSpacing]="10" cellPadding="10" align="center">
+  <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Specialty</th>
+      <th>City</th>
+  </tr>
+  <tr *ngFor="let doctor of doctors">
+  <td>{{doctor.name}}</td>
+  <td>{{doctor.email}}</td>
+  <td>{{doctor.password}}</td>
+  <td>{{doctor.specialty}}</td>
+  <td>{{doctor.city}}</td>
+  </tr>
+</table>
+<br/>
 </main>
 <br/>
 <br/>

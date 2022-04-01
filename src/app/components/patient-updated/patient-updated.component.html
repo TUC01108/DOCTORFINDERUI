@@ -41,7 +41,7 @@ form {
 	margin-bottom: 5px;
 }
 
-.form-signin input[type="age"] {
+.form-signin input[type="email"] {
 	margin-bottom: 5px;
 }
 
@@ -96,48 +96,49 @@ button {
             <fieldset>
 				<!-- <img class="mb-4" src="Revature-Logo2.jpg" alt="" width="270"
 					height="120"> -->
-				<h1 class="h3 mb-3 fw-normal text-white">Please Update Patient Details</h1> 
+				<h1 class="h3 mb-3 fw-normal text-white">Please Update Patient</h1> 
+
+				<!-- Patient Id -->
+                <div class="form-floating">
+					<input type="text" class="form-control" formControlName="patientid" name="patientid"
+						id="floatingId" placeholder="patientid"> <label
+						for="floatingId">Patient Id</label>
+				</div>
 
                 <!-- Name -->
                 <div class="form-floating">
 					<input type="text" class="form-control" formControlName="name" name="name"
 						id="floatingUsername" placeholder="name"> <label
-						for="floatingInput">Name</label>
+						for="floatingUsername">Name</label>
 				</div>
 
-                <!-- Age -->
+                <!-- Email -->
                 <div class="form-floating">
-					<input type="text" class="form-control" formControlName="age" name="age"
-						id="age" placeholder="age"> <label
-						for="floatingInput">Age</label>
+					<input type="text" class="form-control" formControlName="email" name="email"
+						id="floatingEmail" placeholder="email"> <label
+						for="floatingEmail">Email</label>
 				</div>
                 
-                <!-- Gender -->
+                <!-- Password -->
 				<div class="form-floating">
-					<input type="text" class="form-control" formControlName="gender" name="gender"
-						id="floatingPassword" placeholder="gender"> <label
-						for="floatingPassword">Gender</label>
+					<input type="password" class="form-control" formControlName="password" name="password"
+						id="floatingPassword" placeholder="password"> <label
+						for="floatingPassword">Password</label>
 				</div>
 
-                <!-- DOB -->
-				<div class="form-floating">
-					<input type="text" class="form-control" formControlName="dob" name="dob"
-						id="floatingConfirmPassword" placeholder="dob"> <label
-						for="floatingPassword">DOB</label>
-				</div>
 
-                <!-- Height -->
+                <!-- City -->
                 <div class="form-floating">
-					<input type="text" class="form-control" formControlName="height" name="height"
-						id="height" placeholder="height"> <label
-						for="floatingInput">Height</label>
+					<input type="text" class="form-control" formControlName="city" name="city"
+						id="floatingInput" placeholder="city"> <label
+						for="floatingInput">City</label>
 				</div>
 
-				<!-- Weight -->
+				<!-- Symptom -->
                 <div class="form-floating">
-					<input type="text" class="form-control" formControlName="weight" name="weight"
-						id="weight" placeholder="weight"> <label
-						for="floatingInput">Weight</label>
+					<input type="text" class="form-control" formControlName="symptom" name="symptom"
+						id="floatingSymptom" placeholder="symptom"> <label
+						for="floatingSymptom">Symptom</label>
 				</div>
                 
 

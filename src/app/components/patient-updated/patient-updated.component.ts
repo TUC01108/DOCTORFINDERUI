@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/models/patient';
-import { PatientProfile } from 'src/app/models/patientProfile';
 import { PatientService } from 'src/app/services/patient.service';
 
 @Component({
@@ -20,18 +19,18 @@ export class PatientUpdatedComponent implements OnInit {
   
     ngOnInit(): void {
       this.patientForm = this.formBuilder.group({
+        patientid : [''],
         name : [''],
-        age : [''],
-        gender : [''],
-        dob : [''],
-        height : [''],
-        weight : ['']
+      email : [''],
+      password : [''],
+      city : [''],
+      symptom : ['']
       })
     }
     updatePatientInfo()
     {
-      console.log()
-      this.patientService.updatePatient(this.patientForm.value.patientid , this.patient).subscribe((data:any) => {
+      console.log(this.patientForm.value)
+      this.patientService.updatePatient(this.patientForm.value.patientid , this.patientForm.value).subscribe((data:any) => {
         this.successMessage = 'Patient with patient id '+this.patientForm.value.patientid+' updated successfully';
         
       },err =>this.router.navigate(['patientInfo']) )

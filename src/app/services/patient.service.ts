@@ -32,8 +32,8 @@ export class PatientService {
     return this.httpClient.post<Patient> (patientURL,patient,this.httpOptions);
   }
 
-  updatePatient(patientId:number,patient:Patient): Observable<Patient> {
-    return this.httpClient.put<Patient>(`${patientURL}/${patientId}`,patient,this.httpOptions)
+  updatePatient(patientid:number,patient:Patient): Observable<Patient> {
+    return this.httpClient.put<Patient>(`${patientURL}/${patientid}`,patient,this.httpOptions)
     .pipe(
       retry(0),
       catchError(this.errorHandler)
