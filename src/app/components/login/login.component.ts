@@ -48,6 +48,23 @@ export class LoginComponent implements OnInit {
   }
   */
 
+  verifyLogin()
+  {
+    console.log(this.loginForm.value.username)
+    console.log(this.loginForm.value.password)
+    
+
+    this.loginService.verifyLogin(this.loginForm.value.username,this.loginForm.value.password).subscribe((data:any) => {
+      this.successMessage = 'Logged in successfull';
+      this.router.navigate(['patientHome'])
+    },err =>this.router.navigate(['login']))
+
+  }
+  /*this.loginService.getLoginByEmail(this.loginForm.value.username).subscribe((data:any) => {
+      this.successMessage = 'Login with username '+this.loginForm.value.username+' logged in successfully';
+      
+    },err =>this.router.navigate(['login']) )*/
+
   
 
 }

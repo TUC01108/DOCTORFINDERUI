@@ -33,6 +33,26 @@ export class LoginService {
     return this.httpClient.get<Login> (`${loginURL}/${loginid}`);
   }
 
+  // get login from email
+  getLoginByEmail(username:String) : Observable<Login>
+  {
+    return this.httpClient.get<Login> (`${loginURL}/getUserByUsername/${username}`)
+    .pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    );
+    
+  }
+
+  verifyLogin(username:String,password:String) : Observable<Login>
+  {
+    return this.httpClient.get<Login> (`${loginURL}/verifyLogin/${username}/${password}`)
+    .pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    );
+  }
+
   // save a single login
   saveLogin(login:Login) : Observable<Login> {
     return this.httpClient.post<Login> (loginURL,login,this.httpOptions);

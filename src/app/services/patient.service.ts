@@ -29,7 +29,11 @@ export class PatientService {
 
   // save a single patient
   savePatient(patient:Patient) : Observable<Patient> {
-    return this.httpClient.post<Patient> (patientURL,patient,this.httpOptions);
+    return this.httpClient.post<Patient> (patientURL,patient,this.httpOptions)
+    .pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    );
   }
 
   updatePatient(patientid:number,patient:Patient): Observable<Patient> {

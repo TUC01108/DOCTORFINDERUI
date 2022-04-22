@@ -44,30 +44,7 @@ form {
   margin-left:10px;
 }
 </style>
-<script>
-  /*
-function validate() {
-	
-	var uname = document.getElementById("username").value;
-	var pwd = document.getElementById("password").value;
-	var canSubmit = true;
-	
-	if(uname.length ==0) {
-	alert("Please enter username")
-	return false;
-	} else if (pwd.length == 0) {
-	alert("Please enter password")
-	return false;
-	} else if (pwd.length < 6 || pwd.length > 12) {
-	alert("Please enter password between 6 and 12 characters in length.")
-	return false;
-	} 
 
-	
-	
-}
-*/
-</script>
 </head>
 <body class="text-center bg-dark">
 
@@ -84,18 +61,8 @@ function validate() {
   </header>
     
 <main class="form-signin">
-  <form novalidate [formGroup]="loginForm">
-    <!--
-    <img class="mb-4" src="Revature-Logo2.jpg" alt="" width="270" height="120">
-    -->
+  <form novalidate [formGroup]="loginForm" (ngSubmit)="verifyLogin()">
      <h1 class="h3 mb-3 fw-normal text-white">Please Sign In</h1> 
-
-     <!--
-     <div class="form-floating" id="loginid">
-      <input type="text" class="form-control" formControlName="loginid" name="loginid" id="floatingId" placeholder="loginid">
-      <label for="floatingInput">Login Id</label>
-    </div>
-    -->
 
     <div class="form-floating" id="usertext">
       <input type="text" class="form-control" formControlName="username" name="username" id="floatingInput" placeholder="Username">
@@ -119,10 +86,9 @@ function validate() {
         <input type="radio" value="doctor" formControlName="accounttype" name="accounttype"> Doctor
       </label>
     </div>
-    <div class="alert alert-danger" *ngIf="loginForm.get('accounttype').hasError('required')
-    ">Please Choose Patient or Doctor</div>
-
-    <button class="w-100 btn btn-lg btn-primary" type="submit" id="btnSubmit" [disabled]="!loginForm.valid">Sign in</button>
+    <!--<div class="alert alert-danger" *ngIf="loginForm.get('accounttype').hasError('required')">Please Choose Patient or Doctor</div>
+    -->
+    <button class="w-100 btn btn-lg btn-primary" type="submit" id="btnSubmit" [disabled]="!loginForm.valid" value="Submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">© 2022</p>
   </form>
 </main>

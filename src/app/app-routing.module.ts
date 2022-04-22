@@ -16,6 +16,7 @@ import { PatientInfoComponent } from './components/patient-info/patient-info.com
 import { PatientUpdatedComponent } from './components/patient-updated/patient-updated.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
+//import { CanActivateAuthGuard } from './services/auth.service';
 
 
 
@@ -33,7 +34,7 @@ const routes: Routes = [
   { path: 'billInfo', component : BillInfoComponent},
   { path: 'appointmentAdd', component : AppointmentAddComponent},
   { path: 'appointmentInfo', component : AppointmentInfoComponent},
-  { path: 'patientHome', component : PatientHomeComponent},
+  { path: 'patientHome', component : PatientHomeComponent}, //, canActivate: [CanActivateAuthGuard]},
   { path: 'doctorHome', component : DoctorHomeComponent},
   { path: 'register', component : RegisterComponent},
   { path: 'doctorUpdate', component : DoctorUpdateComponent},
